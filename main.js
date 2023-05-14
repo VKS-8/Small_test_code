@@ -1,3 +1,5 @@
+//remove this comment after publishing to github
+
 //When this variable is removed, it should be easy to locate and remove all instances
 // use console.log only for instances that need to stay in the code
 let log = console.log  
