@@ -11,6 +11,9 @@ let sectionId = `section${sectionIdNum}`;
 // Global variable that is reassigned from addSection() to be used by other functions
 let newSectionTag = '';  
   log('newSectionTag ' + newSectionTag);
+let appendSectionsHere = document.querySelector('#appendSectionsHere');
+  log('appendSectionsHere' + appendSectionsHere);
+
 
 const mainContainer = document.querySelector('#main-container');
   log(mainContainer);
@@ -43,12 +46,14 @@ function main() {
 
       buttonAddSection.addEventListener('click', () => {
         addSection();
-          log(mainContainer);
+          log(appendSectionsHere);
+          appendSectionsHere.append(newSectionTag);
       });
 
       buttonRemoveSection.addEventListener('click', () => {
         removeSection();
-          log(mainContainer);
+        log(appendSectionsHere);
+        appendSectionsHere.remove(newSectionTag);
       });
 
   }
@@ -63,13 +68,12 @@ function currentSectionIdNum() { //set this function up on each of the following
 
 // Add section
 function addSection() {
-  
+    
   newSectionTag = document.createElement('section');
-
-  mainContainer.appendChild(newSectionTag);
+  
   log('New section has been added ' + mainContainer);
-  setClassAttribute('section');
   incrementID('section');
+  setClassAttribute('section');
 
   buttonAddSection.removeEventListener('click', addSection );
   
@@ -83,12 +87,12 @@ function removeSection() {
       return;
   }
 
-  newSectionTag = mainContainer.querySelector(`#section${sectionIdNum}`);
+  newSectionTag = appendSectionsHere.querySelector(prompt(`#section${sectionIdNum}`));
 
   if(newSectionTag) {
-    mainContainer.removeChild(newSectionTag);
-      log('Section has been removed ' + mainContainer);
-    decrementId('section');
+    appendSectionsHere.removeChild(newSectionTag);
+      log('Section has been removed ' + appendSectionsHere);
+    // decrementId('section');
       log('Section ID after section was removed ' + sectionId);
 
   }
