@@ -5,34 +5,77 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Testing Code</title>
+    <link rel="stylesheet" href="style.css">
+    <script defer src="main.js"></script>
 </head>
 <body>
-  <main id="main-container">
-    <div id="appendSectionsHere">
-    <section id="section1" class="sections">
-      <article id="article1" class="articles">
-        <div id="div1" class="divs">
-          <p id="para1" class="">
-            Press F-12 to inspect in Chrome and chose the console to <br>
-            see the logs
-          </p>  
-        </div>
-      </article>
+  <main id="main-container" class="allContainers">
+    <div id="appendSectionsHere" class="allContainers">Append Sections Div
+      <section id="section1" class="sections allContainers">Section 1
+        <article id="article1" class="articles allContainers">Article 1
+          <div id="div1" class="divs allContainers">Div 1
+            <p id="para1" class="paras allContainers"> Paragraph 1<br><br>
+              Press F-12 to inspect in Chrome and<br>
+              chose the console to see the logs
+            </p>  
+          </div>
+        </article>
     </section>
   </div>
 
+  <div id="logComponentIdButton" class="buttonDiv">
     <!-- SECTION: ADD / REMOVE / LOG ID NUMBER / LOG CLASS  -->
-    <button id="buttonLogSectionIdNum" style="display: block; margin: 1rem 0;">
-      Current SectionIdNum
+    <button id="buttonLogSectionIdNum" class="button">
+      Log<br>
+      current<br>
+      SectionIdNum
     </button>
-    <button id="buttonAddSection" style="display: block; margin: 1rem 0;">
+    <button id="buttonLogArticleIdNum" class="button">
+      Log<br>
+      current<br>
+      ArticleIdNum
+    </button>
+    <button id="buttonLogDivIdNum" class="button">
+      Log<br>
+      current<br>
+      DivIdNum
+    </button>
+    <button id="buttonLogPargraphIdNum" class="button">
+      Log<br>
+      current<br>
+      ParagraphIdNum
+    </button>
+  </div>
+  <div id="addComponentButton" class="buttonDiv">
+    <button id="buttonAddSection" class="button">
       Add section tag
     </button>
-    <button id="buttonRemoveSection" style="display: block; margin: 1rem 0">
+    <button id="buttonAddArticle" class="button">
+      Add article tag
+    </button>
+    <button id="buttonAddDiv" class="button">
+      Add div tag
+    </button>
+    <button id="buttonAddParagraph" class="button">
+      Add paragraph tag
+    </button>
+  </div>
+  <div id="removeComponentButton" class="buttonDiv">
+    <button id="buttonRemoveSection" class="button">
       Remove section tag
     </button>
+    <button id="buttonRemoveArticle" class="button">
+      Remove article tag
+    </button>
+    <button id="buttonRemoveDiv" class="button">
+      Remove div tag
+    </button>
+    <button id="buttonRemoveParagraph" class="button">
+      Remove paragraph tag
+    </button>
+  </div>
 
   </main>
-  <script src="main.js"></script>
+  
 </body>
 </html>

@@ -1,6 +1,71 @@
-sections {
- display: block;
- Width: 100%;
- height: 25vh;
- background: yellowgreen;
+* {
+ box-sizing: border-box;
+ font-size: 1rem;
 }
+
+body {
+ height: 100%;
+ width: 100%;
+}
+
+.allContainers {
+ display: block;
+ Position: relative;
+ width: 100%;
+ height: auto;
+ padding: 3rem;
+ margin: 1rem auto;
+}
+
+.button {
+ height: 10rem;
+ width: 10rem;
+ justify-content: center;
+ align-items: center;
+ border-radius: 50%;
+ border: 2px solid #808080;
+ margin: 0.25rem;
+ box-shadow: 2px 4px 5px rgba(0, 0, 0, 0.3);
+}
+
+.button:hover {
+ cursor: pointer;
+ background: lightgreen
+}
+
+#main-container {
+ background: lightblue;
+}
+
+#appendSectionsHere {
+ background: pink;
+ box-shadow: 2px 4px 5px rgba(0, 0, 0, 0.3);
+ border-radius: 30px;
+}
+
+.sections {
+ background: lightsalmon;
+}
+.articles {
+ background: lightgreen;
+}
+.divs {
+ background: lightseagreen;
+}
+
+.paras {
+ background: lightgoldenrodyellow;
+}
+
+.buttonDiv {
+ margin: 1rem auto;
+}
+
+#logComponentIdButton,
+#addComponentButton,
+#removeComponentButton {
+ display: flex;
+ justify-content: space-evenly;
+ align-items: center;
+}
+
