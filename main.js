@@ -90,7 +90,7 @@ function main() {
   // Logging the Id number is for testing purposes only and will be removed
   buttonLogSectionIdNum.addEventListener('click', ()=> {
     currentSectionIdNum();
-      log(sectionId);
+      log('main() ' + sectionId);
   });
 
   buttonAddSection.addEventListener('click', () => {
@@ -109,7 +109,7 @@ function main() {
   // Logging the Id number is for testing purposes only and will be removed
   buttonLogArticleIdNum.addEventListener('click', ()=> {
     currentArticleIdNum();
-      log(articleId);
+      log('main() ' + articleId);
   });
 
   buttonAddArticle.addEventListener('click', () => {
@@ -128,7 +128,7 @@ function main() {
   // Logging the Id number is for testing purposes only and will be removed
   buttonLogDivIdNum.addEventListener('click', ()=> {
     currentDivIdNum();
-      log(divId);
+      log('main() ' + divId);
   });
 
   buttonAddDiv.addEventListener('click', () => {
@@ -137,10 +137,29 @@ function main() {
       appendDivsHere.append(newDivTag);
   });
 
+  buttonRemoveDiv.addEventListener('click', () => {
+    removeDiv();
+    log(appendDivsHere);
+    appendDivsHere.remove(newDivTag);
+  });
+
+  //PARAGRAPHS
+  // Logging the Id number is for testing purposes only and will be removed
+  buttonLogParagraphIdNum.addEventListener('click', ()=> {
+    currentParagraphIdNum();
+      log('main() ' + paragraphId);
+  });
+
+  buttonAddParagraph.addEventListener('click', () => {
+    addParagraph();
+      log(appendParagraphsHere);
+      appendParagraphsHere.append(newParagraphTag);
+  });
+
   buttonRemoveParagraph.addEventListener('click', () => {
     removeParagraph();
     log(appendParagraphsHere);
-    appendParagraphssHere.remove(newParagraphTag);
+    appendParagraphsHere.remove(newParagraphTag);
   });
 
 }
@@ -171,7 +190,7 @@ buttonLogDivIdNum.addEventListener('click', currentDivIdNum);
 
 // Log current paragraph idNum
 function currentParagraphIdNum() {
-  logIdNum('paragraph');  
+  logIdNum('p');  
 buttonLogParagraphIdNum.removeEventListener('click', currentParagraphIdNum);
 
 buttonLogParagraphIdNum.addEventListener('click', currentParagraphIdNum);
@@ -210,7 +229,7 @@ function addDiv() {
     
   newDivTag = document.createElement('div');
   
-  log(`New div has been added has been added to ${divId}`);
+  log(`New div has been added has been added: ${divId}`);
   incrementID('div');
   setClassAttribute('div');
 
@@ -224,7 +243,7 @@ function addParagraph() {
     
   newParagraphTag = document.createElement('paragraph');
   
-  log(`New paragraph has been added has been added to ${paragraphId}`);
+  log(`New paragraph has been added has been added: ${paragraphId}`);
   incrementID('paragraph');
   setClassAttribute('paragraph');
 
@@ -280,11 +299,11 @@ function incrementID(element) {
         log('New div id ' + divId);
       break;
     case 'p':
-      pIdNum = ++pIdNum;
-      pId = `p${pIdNum}`;
-        log(pIdNum);
-      newPTag.setAttribute('id', pId);
-        log('New p id ' + pId);
+      paragraphIdNum = ++paragraphIdNum;
+      paragraphId = `p${paragraphIdNum}`;
+        log(paragraphIdNum);
+      newPTag.setAttribute('id', paragraphId);
+        log('New paragraph (p) id ' + paragraphId);
       break;
     default:
       console.log('That was not an element that I expected. Please try again.');
@@ -308,7 +327,7 @@ function decrementId(element) {
         log(divIdNum);
       break;
     case 'p':
-      pIdNum = --pIdNum;
+      paragraphIdNum = --paragraphIdNum;
         log(pIdNum);
       break;
     default:
